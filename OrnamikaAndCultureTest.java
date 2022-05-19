@@ -23,9 +23,9 @@ public class OrnamikaAndCultureTest {
 
         driver.findElement(By.xpath("//*[@id='reconstructions']/div[2]/a")).click();
         driver.findElement(By.id("filter-label")).click();
-        driver.findElement(By.xpath("//a[contains(.,\"Элементы\")]")).click();
-        driver.findElement(By.xpath("//span[contains(.,\"птица\")]")).click();
-        driver.findElement(By.xpath("//span[contains(.,\"человек\")]")).click();
+        driver.findElement(By.xpath("//a[contains(.,\'Элементы\')]")).click();
+        driver.findElement(By.xpath("//span[contains(.,\'птица\')]")).click();
+        driver.findElement(By.xpath("//span[contains(.,\'человек\')]")).click();
         driver.findElement(By.id("filter-done-btn")).click();
         driver.findElement(By.id("show-results-btn")).click();
 
@@ -42,16 +42,13 @@ public class OrnamikaAndCultureTest {
         webDriverWait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"title\"][contains(.,\"Реконструкция узора на ситце\")]")));*/
 
         Thread.sleep(10000);
-        driver.findElement(By.xpath("//a[@href=\"https://ornamika.com/ru/reconstruction/20021/\"]")).click();
+        driver.findElement(By.xpath("//a[@href='https://ornamika.com/ru/reconstruction/20021/']")).click();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(By.xpath("//div[@class=\"label\"][contains(.,\"Описание\")]")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(By.xpath("//div[@class=\"label\"][contains(.,\"Информация об источнике\")]")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(By.xpath("//div[@class=\"label\"][contains(.,\"Особенности узора\")]")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.findElement(By.xpath("//div[@class=\"label\"][contains(.,\"Особенности объекта\")]")).click();
+        driver.findElement(By.xpath("//div[@class='label'][contains(.,'Описание')]")).click();
+        driver.findElement(By.xpath("//div[@class='label'][contains(.,'Информация об источнике')]")).click();
+        driver.findElement(By.xpath("//div[@class='label'][contains(.,'Особенности узора')]")).click();
+        driver.findElement(By.xpath("//div[@class='label'][contains(.,'Особенности объекта')]")).click();
         Thread.sleep(3000);
 
         //driver.findElement(By.xpath("/html/body/div[1]/a[position()=last()]")).click();
@@ -63,18 +60,18 @@ public class OrnamikaAndCultureTest {
         //culture rf
         driver.get("https://www.culture.ru/");
 
-        driver.findElement(By.xpath("//button[@title=\"Поиск\"]")).click();
-        driver.findElement(By.xpath("//input[@placeholder=\"Введите поисковый запрос\"]")).sendKeys("Пушкин");
-        driver.findElement(By.xpath("//button[@aria-label=\"Поиск\"]")).click();
+        driver.findElement(By.xpath("//button[@title='Поиск']")).click();
+        driver.findElement(By.xpath("//input[@placeholder='Введите поисковый запрос']")).sendKeys("Пушкин");
+        driver.findElement(By.xpath("//button[@aria-label='Поиск']")).click();
 
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, Duration.ofSeconds(10));
-        webDriverWait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"notify-bar_footer\"]/button")));
-        driver.findElement(By.xpath("//div[@class=\"notify-bar_footer\"]/button")).click();
+        webDriverWait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='notify-bar_footer']/button")));
+        driver.findElement(By.xpath("//div[@class='notify-bar_footer']/button")).click();
 
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, Duration.ofSeconds(15));
-        webDriverWait4.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href=\"https://www.culture.ru/s/pushkin/\"]")));
-        driver.findElement(By.xpath("//a[@href=\"https://www.culture.ru/s/pushkin/\"]")).click();
-        driver.findElement(By.xpath("//div[@id=\"recorddiv31884470\"]/div[@class=\"t-cover__arrow\"]")).click();
+        webDriverWait4.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='https://www.culture.ru/s/pushkin/'']")));
+        driver.findElement(By.xpath("//a[@href='https://www.culture.ru/s/pushkin/']")).click();
+        driver.findElement(By.xpath("//div[@id='recorddiv31884470']/div[@class='t-cover__arrow']")).click();
         Thread.sleep(3000);
         driver.navigate().back();
 
